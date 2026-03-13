@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text Appear on Scroll</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f4f4f4;
+    }
+
+    section {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hidden-text {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+</head>
+<body>
+
+<section style="background:#ddd;">
+    <h1>Scroll Down</h1>
+</section>
+
+<section>
+    <h2 class="hidden-text">✨ This text appears when you scroll to it!</h2>
+</section>
+
+<section style="background:#ccc;">
+    <p class="hidden-text">Here’s another block of text that fades in on scroll.</p>
+</section>
+
+<script>
+    // Select all elements with the hidden-text class
+    const hiddenElements = document.querySelectorAll('.hidden-text');
+
+    // Create an Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                // Optional: stop observing once shown
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 }); // Trigger when 20% of element is visible
+
+    // Observe each hidden element
+    hiddenElements.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
