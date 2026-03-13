@@ -4,6 +4,7 @@
 "completion": link
 "verifier": player name
 "list": 2
+ds=true
 "records": [
         {
             "user": "username",
@@ -13,3 +14,4 @@
         }
     ]
 }
+
