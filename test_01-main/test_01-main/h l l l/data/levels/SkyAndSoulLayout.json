@@ -1,1 +1,16 @@
-
+{
+"id": your id
+"name": Your Level
+"completion": link
+"verifier": CloverIsHere
+"list": 1
+ds=false
+"records": [
+        {
+            "user": "username",
+            "link": "link",
+            "percent": 100,
+            "hz": 60
+        }
+    ]
+}
