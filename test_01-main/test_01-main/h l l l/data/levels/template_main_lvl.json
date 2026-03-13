@@ -1,1 +1,15 @@
-
+{
+"id": your id
+"name": Your Level
+"completion": link
+"verifier": player name
+"list": 1
+"records": [
+        {
+            "user": "username",
+            "link": "link",
+            "percent": 100,
+            "hz": 60
+        }
+    ]
+}
